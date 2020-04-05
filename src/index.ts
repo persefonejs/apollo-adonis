@@ -1,3 +1,3 @@
-export const Perfe = (): string => {
-  return 'FOOOOO 2**@@*';
+export const PersefoneVersion = (): string => {
+  return 'PersefoneJs v1.0.0';
 };

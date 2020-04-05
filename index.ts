@@ -1,1 +1,1 @@
-export { Perfe } from './src/index';
+export { PersefoneVersion } from './src/index';
