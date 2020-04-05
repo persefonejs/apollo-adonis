@@ -19,7 +19,7 @@ jobs:
         always-auth: false
         scope: persefonejs
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_NPM }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: Installation
       run: yarn install --ignore-scripts
     - name: Publish
