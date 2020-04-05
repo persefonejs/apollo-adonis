@@ -23,7 +23,7 @@ jobs:
       run: yarn lint
     - name: Test build
       run: yarn build
-    - name: init testing
+    - name: Testing
       run: yarn ci-coverage
       env:
         CI: true
