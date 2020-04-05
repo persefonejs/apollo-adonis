@@ -1,0 +1,9 @@
+{
+  "extends": ["plugin:adonis/typescriptApp", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "semi": "off",
+    "@typescript-eslint/semi": "off"
+  }
+}
