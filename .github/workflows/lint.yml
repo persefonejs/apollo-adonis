@@ -1,0 +1,29 @@
+on: [pull_request]
+
+name: Check ESLint
+
+jobs:
+
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: valmirphp/setup-node@master
+      with:
+        node-version: '10.x'
+        registry-url: 'https://npm.pkg.github.com'
+        always-auth: false
+        scope: persefonejs
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_NPM }}
+    - name: Installation
+      run: yarn install --ignore-scripts
+    - name: Check TSLint
+      run: yarn lint
+    - name: Test build
+      run: yarn build
+    - name: init testing
+      run: yarn ci-coverage
+      env:
+        CI: true

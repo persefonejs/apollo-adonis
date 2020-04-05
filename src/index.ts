@@ -1,3 +1,3 @@
 export const PersefoneVersion = (): string => {
-  return 'PersefoneJs v1.0.0';
+  return 'PersefoneJs v1.0';
 };
