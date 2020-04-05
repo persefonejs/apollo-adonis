@@ -1,0 +1,28 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: valmirphp/setup-node@master
+      with:
+        node-version: '10.x'
+        registry-url: 'https://npm.pkg.github.com'
+        always-auth: false
+        scope: persefonejs
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN_NPM }}
+    - name: Installation
+      run: yarn install --ignore-scripts
+    - name: Publish
+      run: yarn publish --non-interactive
+      env:
+        CI: true
